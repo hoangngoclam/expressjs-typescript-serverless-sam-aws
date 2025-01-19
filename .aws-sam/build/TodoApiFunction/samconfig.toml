@@ -1,9 +1,0 @@
-version = 0.1
-[default.deploy.parameters]
-stack_name = "lam-test-deploy-using-sam"
-resolve_s3 = true
-s3_prefix = "lam-test-deploy-using-sam"
-region = "ap-southeast-1"
-confirm_changeset = true
-capabilities = "CAPABILITY_IAM"
-image_repositories = []
