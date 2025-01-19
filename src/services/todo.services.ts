@@ -1,12 +1,6 @@
+import { DeleteCommand, GetCommand, PutCommand, ScanCommand, UpdateCommand } from "@aws-sdk/lib-dynamodb";
 import { dynamoDB } from "../config/dynamo";
-import {
-  GetCommand,
-  PutCommand,
-  ScanCommand,
-  DeleteCommand,
-  UpdateCommand,
-} from "@aws-sdk/lib-dynamodb";
-import { Todo } from "../models/todo.models";
+import type { Todo } from "../models/todo.models";
 
 const TABLE_NAME = "todos";
 
@@ -40,7 +34,7 @@ export const updateTodoService = async (uuid: string, updateData: Partial<Todo>)
         ":desc": updateData.description,
         ":completed": updateData.completed,
       },
-    })
+    }),
   );
 };
 

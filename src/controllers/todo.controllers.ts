@@ -1,12 +1,12 @@
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
+import type { Todo } from "../models/todo.models";
 import {
   createTodoService,
-  getTodosService,
-  getTodoByIdService,
-  updateTodoService,
   deleteTodoService,
+  getTodoByIdService,
+  getTodosService,
+  updateTodoService,
 } from "../services/todo.services";
-import { Todo } from "../models/todo.models";
 
 // Create a new To-Do item
 export const createTodo = async (req: Request, res: Response): Promise<void> => {

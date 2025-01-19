@@ -1,12 +1,12 @@
-import { Request, Response } from "express";
-import { dynamoDB } from "../config/dynamo";
 import {
+  DeleteCommand,
   GetCommand,
   PutCommand,
   ScanCommand,
-  DeleteCommand,
   UpdateCommand,
 } from "@aws-sdk/lib-dynamodb";
+import { Request, Response } from "express";
+import { dynamoDB } from "../config/dynamo";
 import { Todo } from "../models/todo";
 
 const TABLE_NAME = "todos";
@@ -47,7 +47,7 @@ export const getTodoById = async (req: Request, res: Response): Promise<void> =>
     const { id } = req.params;
 
     const result = await dynamoDB.send(
-      new GetCommand({ TableName: TABLE_NAME, Key: { uuid: Number(id) } })
+      new GetCommand({ TableName: TABLE_NAME, Key: { uuid: Number(id) } }),
     );
 
     if (!result.Item) {
@@ -77,7 +77,7 @@ export const updateTodo = async (req: Request, res: Response): Promise<void> => 
           ":desc": description,
           ":completed": completed,
         },
-      })
+      }),
     );
 
     res.json({ message: "To-Do updated successfully" });

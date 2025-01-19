@@ -1,6 +1,21 @@
 {
-  "conventionalCommits.scopes": [
-    "source-structure",
-    "document"
-  ]
+  "conventionalCommits.scopes": ["source-structure", "document"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.defaultFormatter": "biomejs.biome",
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "eslint.enable": false,
+  "biome.lspBin": "node_modules/@biomejs/biome/bin/biome",
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

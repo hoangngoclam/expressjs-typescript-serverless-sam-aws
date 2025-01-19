@@ -1,7 +1,7 @@
+import dotenv from "dotenv";
 import express from "express";
 import serverless from "serverless-http";
 import todoRoutes from "./routes/todoRoutes";
-import dotenv from "dotenv";
 
 dotenv.config();
 
